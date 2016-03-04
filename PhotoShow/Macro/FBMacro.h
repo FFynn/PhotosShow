@@ -1,6 +1,6 @@
 //
 //  FBMacro.h
-//  PhotoShow
+//  FBMacro
 //
 //  Created by FLYang on 16/3/3.
 //  Copyright © 2016年 Fynn. All rights reserved.

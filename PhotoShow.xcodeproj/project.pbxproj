@@ -32,6 +32,14 @@
 		D86226011C883E4D00C73D03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86226001C883E4D00C73D03 /* CoreLocation.framework */; };
 		D86226031C883E6A00C73D03 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D86226021C883E6A00C73D03 /* libstdc++.6.0.9.tbd */; };
 		D86226071C88434800C73D03 /* PictureToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86226061C88434800C73D03 /* PictureToolViewController.m */; };
+		D8F7C9831C898BD400B43D83 /* FiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C97F1C898BD400B43D83 /* FiltersView.m */; };
+		D8F7C9841C898BD400B43D83 /* FBFiltersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C9801C898BD400B43D83 /* FBFiltersCollectionViewCell.m */; };
+		D8F7C9861C898C7800B43D83 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7C9851C898C7800B43D83 /* CoreImage.framework */; };
+		D8F7C9881C898CCD00B43D83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7C9871C898CCD00B43D83 /* UIKit.framework */; };
+		D8F7C98A1C898CD400B43D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7C9891C898CD400B43D83 /* Foundation.framework */; };
+		D8F7C98D1C898FC100B43D83 /* FBFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C98C1C898FC100B43D83 /* FBFilters.m */; };
+		D8F7C98F1C89907700B43D83 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7C98E1C89907700B43D83 /* Security.framework */; };
+		D8F7C9911C89908700B43D83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F7C9901C89908700B43D83 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +106,17 @@
 		D86226021C883E6A00C73D03 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D86226051C88434800C73D03 /* PictureToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureToolViewController.h; sourceTree = "<group>"; };
 		D86226061C88434800C73D03 /* PictureToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureToolViewController.m; sourceTree = "<group>"; };
+		D8F7C97F1C898BD400B43D83 /* FiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersView.m; sourceTree = "<group>"; };
+		D8F7C9801C898BD400B43D83 /* FBFiltersCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFiltersCollectionViewCell.m; sourceTree = "<group>"; };
+		D8F7C9811C898BD400B43D83 /* FiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersView.h; sourceTree = "<group>"; };
+		D8F7C9821C898BD400B43D83 /* FBFiltersCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFiltersCollectionViewCell.h; sourceTree = "<group>"; };
+		D8F7C9851C898C7800B43D83 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D8F7C9871C898CCD00B43D83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D8F7C9891C898CD400B43D83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8F7C98B1C898FC100B43D83 /* FBFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFilters.h; sourceTree = "<group>"; };
+		D8F7C98C1C898FC100B43D83 /* FBFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFilters.m; sourceTree = "<group>"; };
+		D8F7C98E1C89907700B43D83 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D8F7C9901C89908700B43D83 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +124,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F7C9911C89908700B43D83 /* SystemConfiguration.framework in Frameworks */,
+				D8F7C98F1C89907700B43D83 /* Security.framework in Frameworks */,
+				D8F7C98A1C898CD400B43D83 /* Foundation.framework in Frameworks */,
+				D8F7C9881C898CCD00B43D83 /* UIKit.framework in Frameworks */,
+				D8F7C9861C898C7800B43D83 /* CoreImage.framework in Frameworks */,
 				D86226031C883E6A00C73D03 /* libstdc++.6.0.9.tbd in Frameworks */,
 				D86226011C883E4D00C73D03 /* CoreLocation.framework in Frameworks */,
 				D86225FF1C883E4400C73D03 /* CoreGraphics.framework in Frameworks */,
@@ -133,6 +157,8 @@
 		D86225851C88396900C73D03 = {
 			isa = PBXGroup;
 			children = (
+				D8F7C9901C89908700B43D83 /* SystemConfiguration.framework */,
+				D8F7C98E1C89907700B43D83 /* Security.framework */,
 				D86225901C88396900C73D03 /* PhotoShow */,
 				D86225AA1C88396900C73D03 /* PhotoShowTests */,
 				D86225B51C88396900C73D03 /* PhotoShowUITests */,
@@ -233,6 +259,10 @@
 		D86225DA1C883B2500C73D03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8F7C9811C898BD400B43D83 /* FiltersView.h */,
+				D8F7C97F1C898BD400B43D83 /* FiltersView.m */,
+				D8F7C9821C898BD400B43D83 /* FBFiltersCollectionViewCell.h */,
+				D8F7C9801C898BD400B43D83 /* FBFiltersCollectionViewCell.m */,
 				D86225EB1C883BB700C73D03 /* CameraView.h */,
 				D86225EA1C883BB700C73D03 /* CameraView.m */,
 				D86225DD1C883B2500C73D03 /* FBFootView.h */,
@@ -254,6 +284,8 @@
 				D86225F01C883C1A00C73D03 /* FBLoadPhoto.h */,
 				D86225F11C883C1A00C73D03 /* FBPhoto.h */,
 				D86225EE1C883C1A00C73D03 /* FBPhoto.m */,
+				D8F7C98B1C898FC100B43D83 /* FBFilters.h */,
+				D8F7C98C1C898FC100B43D83 /* FBFilters.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -261,6 +293,9 @@
 		D86226041C883ECE00C73D03 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				D8F7C9891C898CD400B43D83 /* Foundation.framework */,
+				D8F7C9871C898CCD00B43D83 /* UIKit.framework */,
+				D8F7C9851C898C7800B43D83 /* CoreImage.framework */,
 				D86226021C883E6A00C73D03 /* libstdc++.6.0.9.tbd */,
 				D86226001C883E4D00C73D03 /* CoreLocation.framework */,
 				D86225FE1C883E4400C73D03 /* CoreGraphics.framework */,
@@ -404,13 +439,16 @@
 				D86225E21C883B2500C73D03 /* FBFootView.m in Sources */,
 				D86225961C88396900C73D03 /* AppDelegate.m in Sources */,
 				D86225E31C883B2500C73D03 /* FBPictureCollectionViewCell.m in Sources */,
+				D8F7C9841C898BD400B43D83 /* FBFiltersCollectionViewCell.m in Sources */,
 				D86226071C88434800C73D03 /* PictureToolViewController.m in Sources */,
 				D86225D31C8839C800C73D03 /* ReleaseViewController.m in Sources */,
 				D86225931C88396900C73D03 /* main.m in Sources */,
 				D86225F31C883C1A00C73D03 /* FBLoadPhoto.m in Sources */,
 				D86225D01C8839C800C73D03 /* CropImageViewController.m in Sources */,
+				D8F7C9831C898BD400B43D83 /* FiltersView.m in Sources */,
 				D86225F21C883C1A00C73D03 /* FBPhoto.m in Sources */,
 				D86225D11C8839C800C73D03 /* FiltersViewController.m in Sources */,
+				D8F7C98D1C898FC100B43D83 /* FBFilters.m in Sources */,
 				D86225EC1C883BB700C73D03 /* CameraView.m in Sources */,
 				D86225CF1C8839C800C73D03 /* CreateViewController.m in Sources */,
 				D86225F81C883D9A00C73D03 /* ClipImageViewController.m in Sources */,
@@ -638,6 +676,7 @@
 				D86225BD1C88396900C73D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86225BE1C88396900C73D03 /* Build configuration list for PBXNativeTarget "PhotoShowTests" */ = {
 			isa = XCConfigurationList;
@@ -646,6 +685,7 @@
 				D86225C01C88396900C73D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86225C11C88396900C73D03 /* Build configuration list for PBXNativeTarget "PhotoShowUITests" */ = {
 			isa = XCConfigurationList;
@@ -654,6 +694,7 @@
 				D86225C31C88396900C73D03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
