@@ -8,7 +8,6 @@
 
 #import "FiltersViewController.h"
 #import "ReleaseViewController.h"
-
 #import "FBFilters.h"
 
 @interface FiltersViewController () <FBFootViewDelegate>
@@ -43,6 +42,7 @@
 #pragma mark 继续按钮的点击事件
 - (void)nextBtnClick {
     ReleaseViewController * releaseVC = [[ReleaseViewController alloc] init];
+    releaseVC.doneImageView.image = self.filtersImageView.image;
     [self.navigationController pushViewController:releaseVC animated:YES];
 }
 
@@ -71,16 +71,19 @@
 }
 
 - (void)buttonDidSeletedWithIndex:(NSInteger)index {
-    NSLog(@"打开视图＝＝＝ %zi", index);
     if (index == 3) {
         [self.view addSubview:self.filtersView];
+    
+    } else {
+        NSLog(@"打开视图＝＝＝ %zi", index);
+        [self.filtersView removeFromSuperview];
     }
 }
 
 #pragma mark - 处理图片的视图
 - (UIImageView *)filtersImageView {
     if (!_filtersImageView) {
-        _filtersImageView = [[UIImageView alloc] initWithFrame:CGRectMake(30, 50, (SCREEN_WIDTH - 60), (SCREEN_HEIGHT - 100))];
+        _filtersImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_WIDTH)];
     }
     return _filtersImageView;
 }
@@ -89,7 +92,6 @@
 - (FiltersView *)filtersView {
     if (!_filtersView) {
         _filtersView = [[FiltersView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 170, SCREEN_WIDTH, 120)];
-        
     }
     return _filtersView;
 }

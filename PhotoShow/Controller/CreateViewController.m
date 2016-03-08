@@ -18,6 +18,13 @@
 
 @implementation CreateViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.cameraView.session) {
+        [self.cameraView.session startRunning];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,7 +40,6 @@
 #pragma mark - 设置顶部Nav
 - (void)setNavViewUI {
     [self addNavViewTitle:@"照片胶卷"];
-    [self addCancelButton];
     [self addNextButton];
     
     [self.nextBtn addTarget:self action:@selector(nextButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -108,11 +114,12 @@
     }
 }
 
-#pragma mak - 打开相机的页面
+#pragma mark - 打开相机的页面
 - (CameraView *)cameraView {
     if (!_cameraView) {
         _cameraView = [[CameraView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49)];
         _cameraView.VC = self;
+        _cameraView.Nav = self.navigationController;
     }
     return _cameraView;
 }
@@ -314,17 +321,12 @@
     }];
 }
 
-#pragma mark - 获取所有的相薄
-- (void)loadAllPhotoAlbum {
-    [FBLoadPhoto loadAllPhotoAlbum:^(NSArray * photoAlbum, NSError *error) {
-        if (!error) {
-            self.photoAlbumArr = [NSArray arrayWithArray:photoAlbum];
-        
-        } else {
-            NSLog(@"＝＝＝＝＝＝＝ 加载相册错误%@ ＝＝＝＝＝＝＝", error);
-        }
-    }];
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.cameraView.session) {
+        [self.cameraView.session stopRunning];
+    }
+    
 }
-
 
 @end

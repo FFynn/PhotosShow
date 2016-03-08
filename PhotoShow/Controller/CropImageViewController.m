@@ -40,7 +40,6 @@
 - (void)nextBtnClick {
     FiltersViewController * filtersVC = [[FiltersViewController alloc] init];
     filtersVC.filtersImg = [self.clipImageVC clippingImage];
-    
     [self.navigationController pushViewController:filtersVC animated:YES];
 }
 
@@ -49,7 +48,7 @@
     if (!_clipImageVC) {
         _clipImageVC = [[ClipImageViewController alloc] init];
         _clipImageVC.view.frame = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT - 50);
-        _clipImageVC.clipImgRect = CGRectMake(30, 30, SCREEN_WIDTH - 60, (SCREEN_WIDTH - 60)*1.78);  //  裁剪的大小
+        _clipImageVC.clipImgRect = CGRectMake(0, SCREEN_HEIGHT/5, SCREEN_WIDTH, SCREEN_WIDTH);  //  裁剪的大小
         
         UIImageView * coverView = [[UIImageView alloc] initWithFrame:_clipImageVC.clipImgRect];
         [_clipImageVC.view addSubview:coverView];

@@ -14,10 +14,6 @@
 @property (nonatomic, strong) ALAssetsLibrary   *   assetLibrary;
 @property (readwrite, copy, nonatomic) void(^loadBlock)(NSArray * photos, NSError * error);
 
-@property (nonatomic, strong) NSMutableArray    *   allPhotoAlbum;  //  相薄数组
-@property (nonatomic, strong) ALAssetsLibrary   *   albumAssetLibrary;
-@property (readwrite, copy, nonatomic) void(^loadPhotoAlbum)(NSArray * photoAlbum, NSError * error);
-
 @end
 
 @implementation FBLoadPhoto
@@ -86,47 +82,6 @@
     
     [self.assetLibrary enumerateGroupsWithTypes:(ALAssetsGroupAll) usingBlock:listGroupBlock failureBlock:^(NSError *error) {
         self.loadBlock(nil, error);
-    }];
-}
-
-#pragma mark - 获取相薄
-- (NSMutableArray *)allPhotoAlbum {
-    if (!_allPhotoAlbum) {
-        _allPhotoAlbum = [NSMutableArray array];
-    }
-    return _allPhotoAlbum;
-}
-
-- (ALAssetsLibrary *)albumAssetLibrary {
-    if (!_albumAssetLibrary) {
-        _albumAssetLibrary = [[ALAssetsLibrary alloc] init];
-    }
-    return _albumAssetLibrary;
-}
-
-+ (void)loadAllPhotoAlbum:(void (^)(NSArray *, NSError *))done {
-    [[FBLoadPhoto shareLoad].allPhotoAlbum removeAllObjects];
-    [[FBLoadPhoto shareLoad] setLoadPhotoAlbum:done];
-    [[FBLoadPhoto shareLoad] startLoadingPhotoAlbum];
-}
-
-- (void)startLoadingPhotoAlbum {
-    [self.albumAssetLibrary enumerateGroupsWithTypes:(ALAssetsGroupAll) usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-        if (group) {
-            [group setAssetsFilter:[ALAssetsFilter allPhotos]];
-            
-            if ([group numberOfAssets] > 0) {
-                [self.allPhotoAlbum addObject:group];
-                NSLog(@"－－－－－－－－－－－－ %@", group);
-            }
-            
-            if (group == nil) {
-                self.loadPhotoAlbum(self.allPhotoAlbum, nil);
-            }
-        }
-        
-    } failureBlock:^(NSError *error) {
-        NSLog(@"＝＝＝＝＝＝＝＝ 获取相薄出错 %@ ＝＝＝＝＝＝＝", error);
     }];
 }
 

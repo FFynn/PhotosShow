@@ -32,11 +32,6 @@
     [self.navView addSubview:self.navTitle];
 }
 
-//  取消创建按钮
-- (void)addCancelButton {
-    [self.navView addSubview:self.cancelBtn];
-}
-
 //  继续下一步
 - (void)addNextButton {
     [self.navView addSubview:self.nextBtn];
@@ -76,9 +71,9 @@
 - (UIButton *)nextBtn {
     if (!_nextBtn) {
         _nextBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 60), 0, 50, 50)];
-        [_nextBtn setTitle:@"继续" forState:(UIControlStateNormal)];
+        [_nextBtn setTitle:@"下一步" forState:(UIControlStateNormal)];
         [_nextBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-        _nextBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        _nextBtn.titleLabel.font = [UIFont systemFontOfSize:14];
 
     }
     return _nextBtn;
@@ -98,25 +93,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - 设置取消创建场景按钮
-- (UIButton *)cancelBtn {
-    if (!_cancelBtn) {
-        _cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        [_cancelBtn setImage:[UIImage imageNamed:@"icon_cancel"] forState:(UIControlStateNormal)];
-        [self.cancelBtn addTarget:self action:@selector(cancelBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
-    }
-    return _cancelBtn;
-}
-
-- (void)cancelBtnClick {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - 设置发布场景景按钮
+#pragma mark - 设置完成按钮
 - (UIButton *)doneBtn {
     if (!_doneBtn) {
         _doneBtn = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 60), 0, 50, 50)];
-        [_doneBtn setTitle:@"发布" forState:(UIControlStateNormal)];
+        [_doneBtn setTitle:@"完成" forState:(UIControlStateNormal)];
         [_doneBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
         _doneBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     }
