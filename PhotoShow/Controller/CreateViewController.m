@@ -18,13 +18,6 @@
 
 @implementation CreateViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (self.cameraView.session) {
-        [self.cameraView.session startRunning];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -106,11 +99,20 @@
         [self.view addSubview:self.cameraView];
         [self.recoveryFrameBtn removeFromSuperview];
         
+        if (self.cameraView.session) {
+            [self.cameraView.session startRunning];
+        }
+        
     } else if (index == 0) {
         //  清除相机的视图
         [self.cameraView removeFromSuperview];
         self.createView.hidden = NO;
         [self.view addSubview:self.recoveryFrameBtn];
+        
+        if (self.cameraView.session) {
+            [self.cameraView.session stopRunning];
+        }
+        
     }
 }
 
